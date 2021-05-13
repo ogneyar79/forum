@@ -14,6 +14,9 @@
     <title>Форум job4j</title>
 </head>
 <body>
+
+<input type="button" value="REGISTRATION"
+       onclick="window.location.href='/reg'">
 <div class="container mt-3">
     <div class="row">
         <h4>Форум job4j</h4>
