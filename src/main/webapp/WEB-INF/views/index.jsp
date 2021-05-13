@@ -20,6 +20,11 @@
 <div class="container mt-3">
     <div class="row">
         <h4>Форум job4j</h4>
+        <dr>
+            <div>
+                Login as : ${user.username}
+            </div>
+            <dr/>
     </div>
     <div class="row">
         <table class="table">
