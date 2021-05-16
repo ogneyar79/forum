@@ -47,5 +47,4 @@ public class RegistrationEditUser {
         users.add(Integer.parseInt(id), user);
         return "editusers:/";
     }
-
 }
