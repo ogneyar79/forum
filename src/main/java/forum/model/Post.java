@@ -22,7 +22,6 @@ public class Post {
     private Calendar created;
 
     public static Post of(String name) {
-        System.out.println(" Object Post was created ");
         Post post = new Post();
         post.name = name;
         return post;
