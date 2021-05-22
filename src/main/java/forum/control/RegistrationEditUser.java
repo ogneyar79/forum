@@ -12,13 +12,14 @@ import java.util.ArrayList;
 import java.util.logging.Logger;
 
 @Controller
-public class RegistrationEditUser {
+public class RegistrationEditUser  {
 
     ArrayList<UserF> users = new ArrayList<>();
     private static Logger log = Logger.getLogger(RegistrationEditUser.class.getName());
 
     @GetMapping({"/reg"})
     public String index(Model model) {
+
         return "registration";
     }
 

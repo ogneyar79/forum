@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
-public class LoginControl {
+public class LoginControl  {
 
     @GetMapping("/login")
     public String loginPage(@RequestParam(value = "error", required = false) String error,
