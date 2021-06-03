@@ -91,10 +91,10 @@
         margin-left: -1px;
     }
 </style>
-
 <div class="p-x-1 p-y-3">
-    <form name='registration' class="card card-block m-x-auto bg-faded form-width"
-          action="<c:url value='/registr'/>" method='POST'>
+    <form action="<c:url value='/registrn'/>" name='registration'
+          class="card card-block m-x-auto bg-faded form-width"
+          method='post'>
         <legend class="m-b-1 text-xs-center">Регистрация</legend>
         <div class="form-group input-group">
  <span class="has-float-label">
@@ -117,14 +117,6 @@
             <input class="form-control" id="passwordr" type="password" placeholder="••••••••"/>
             <label for="passwordr">Пароль повторно</label>
         </div>
-        <div class="form-group has-float-label">
-            <select class="form-control custom-select" id="country">
-                <option selected>Россия</option>
-                <option>Казахстан</option>
-                <option>Белоруссия</option>
-            </select>
-            <label for="country">Страна</label>
-        </div>
         <div class="form-group">
             <label class="custom-control custom-checkbox">
                 <input class="custom-control-input" type="checkbox"/>
@@ -137,6 +129,5 @@
         </div>
     </form>
 </div>
-
 </body>
 </html>

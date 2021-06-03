@@ -14,12 +14,16 @@
     <title>Форум job4j</title>
 </head>
 <body>
-
+<div style="position: absolute; right: 1%;"><a href="<c:url value='/logout'/>"><c:out value="${user.username}"/> | Выйти... </a> </div>
 <input type="button" value="REGISTRATION"
        onclick="window.location.href='/reg'">
+
+
 <div class="container mt-3">
     <div class="row">
         <h4>Форум job4j</h4>
+        <div style="position: absolute; right: 22%; font-style: italic; text-shadow: black"><a
+                href="<c:url value="/create"/>">Создать новую тему</a></div>
     </div>
     <div>
         Login as : ${user.username}
@@ -41,7 +45,6 @@
         </table>
     </div>
 </div>
-
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

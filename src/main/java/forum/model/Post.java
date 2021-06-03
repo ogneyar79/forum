@@ -1,7 +1,7 @@
 package forum.model;
 
 import javax.persistence.*;
-import java.util.Calendar;
+import java.util.Date;
 import java.util.Objects;
 
 
@@ -19,7 +19,7 @@ public class Post {
 
     private String description;
 
-    private Calendar created;
+    private Date created;
 
     public static Post of(String name) {
         Post post = new Post();
@@ -51,11 +51,11 @@ public class Post {
         this.description = desc;
     }
 
-    public Calendar getCreated() {
+    public Date getCreated() {
         return created;
     }
 
-    public void setCreated(Calendar created) {
+    public void setCreated(Date created) {
         this.created = created;
     }
 
@@ -74,6 +74,4 @@ public class Post {
     public int hashCode() {
         return Objects.hash(id, name, description, created);
     }
-
-
 }

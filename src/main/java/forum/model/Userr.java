@@ -1,23 +1,44 @@
 package forum.model;
 
-public class UserF {
+import javax.persistence.*;
 
+@Entity
+@Table(name = "users")
+public class Userr {
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(name = "username")
     private String username;
     private String email;
     private String password;
 
     private boolean enabled;
 
+    @ManyToOne
+    @JoinColumn(name = "authority_id")
+    private Authority authority;
 
-    public UserF(String username, String email, String password, boolean enabled) {
+    public void setAuthority(Authority authority) {
+        this.authority = authority;
+    }
+
+
+    public Userr(String username, String email, String password, boolean enabled) {
         this.username = username;
         this.email = email;
         this.password = password;
         this.enabled = enabled;
     }
 
-    public UserF() {
+    public Authority getAuthority() {
+        return authority;
+    }
+
+    public Userr() {
     }
 
     public long getId() {

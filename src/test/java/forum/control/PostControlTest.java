@@ -1,8 +1,8 @@
 package forum.control;
 
 import forum.Main;
-import forum.model.Userr;
-import forum.service.UserService;
+import forum.model.Post;
+import forum.service.PostService;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,25 +22,24 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest(classes = Main.class)
 @AutoConfigureMockMvc
-class RegistrationEditUserTest {
+class PostControlTest {
+
+    @MockBean
+    private PostService posts;
 
     @Autowired
     private MockMvc mockMvc;
 
-    @MockBean
-    private UserService userService;
-
     @Test
     @WithMockUser
     public void shouldReturnDefaultMessage() throws Exception {
-        this.mockMvc.perform(post("/registrn")
-                .param("username", "Robert"))
+        this.mockMvc.perform(post("/sss")
+                .param("name", "Куплю ладу-грант. Дорого."))
                 .andDo(print())
                 .andExpect(status().is3xxRedirection());
-        ArgumentCaptor<Userr> argument = ArgumentCaptor.forClass(Userr.class);
-        verify(userService).save(argument.capture());
-        assertThat(argument.getValue().getUsername(), is("Robert"));
+        ArgumentCaptor<Post> argument = ArgumentCaptor.forClass(Post.class);
+        verify(posts).create(argument.capture());
+        assertThat(argument.getValue().getName(), is("Куплю ладу-грант. Дорого."));
     }
-
 
 }

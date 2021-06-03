@@ -18,7 +18,13 @@ public class IndexControl {
         this.posts = posts;
     }
 
-    @GetMapping({"/", "/index"})
+    @GetMapping("/")
+    public String index() {
+        log.info("? IC 23");
+        return "login";
+    }
+
+    @GetMapping({"/index"})
     public String index(Model model) {
         log.info("Index Control @GetMapping method index");
         model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
