@@ -25,7 +25,7 @@
             </tr>
             </thead>
             <tbody>
-            <form name='login' action="<c:url value='/login'/>" method='POST'>
+            <form  action="<c:url value='/login'/>" method='POST'>
                 <tr>
                     <td>UserName:</td>
                     <td><input type='text' name='username'></td>
@@ -37,7 +37,6 @@
                 <tr>
                     <td colspan='2'><input name="submit" type="submit" value="submit"/></td>
                 </tr>
-
             </form>
             <tr>
                 <td style="color: brown">

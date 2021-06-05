@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,7 +15,8 @@
     <title>Форум job4j</title>
 </head>
 <body>
-<div style="position: absolute; right: 1%;"><a href="<c:url value='/logout'/>"><c:out value="${user.username}"/> | Выйти... </a> </div>
+<div style="position: absolute; right: 1%;"><a href="<c:url value='/logout'/>"><c:out value="${user.username}"/> |
+    Выйти... </a></div>
 <input type="button" value="REGISTRATION"
        onclick="window.location.href='/reg'">
 
@@ -33,12 +35,19 @@
             <thead>
             <tr>
                 <th scope="col">Тема</th>
+                <th scope="col">Описание</th>
+                <th scope="col">Дата создания</th>
             </tr>
             </thead>
             <tbody>
             <c:forEach items="${posts}" var="post">
                 <tr>
                     <td><c:out value="${post.name}"/></td>
+                    <td><c:out value="${post.description}"/></td>
+                    <td><fmt:formatDate value="${post.created}" pattern="dd MMMM yyyy"/></td>
+                    <td><a href="<c:url value='/editpost?id=${post.id}'/>">
+                        <i class="fa fa-edit mr-3">Редактировать Пост</i>
+                    </a></td>
                 </tr>
             </c:forEach>
             </tbody>

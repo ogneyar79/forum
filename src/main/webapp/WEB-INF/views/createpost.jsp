@@ -73,9 +73,9 @@
                                                   id="name">
     </div>
     <div class="form-row">
-        <label for="desc">Post description</label>
-        <textarea rows="5" name="location" placeholder="Введите описание"
-                  id="desc" required></textarea>
+        <label for="description">Post description</label>
+        <textarea rows="5" name="description" placeholder="Введите описание"
+                  id="description" required></textarea>
     </div>
     <div class="form-row">
         <input name="submit" type="submit" value="Сохранить"/>

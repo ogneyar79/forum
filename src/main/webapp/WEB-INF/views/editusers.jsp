@@ -38,7 +38,7 @@
                 <td> ${item.username}</td>
                 <td> ${item.email}</td>
                 <td> ${item.password}</td>
-                <td><a href="<c:url value='/edit?id=${item.id}'/>">Редактировать инцидент</a></td>
+                <td><a href="<c:url value='/edit?id=${item.id}'/>">Редактировать User</a></td>
             </tr>
         </c:forEach>
         </thead>

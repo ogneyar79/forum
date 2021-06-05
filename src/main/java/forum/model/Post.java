@@ -13,7 +13,7 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name="name")
+    @Column(name = "name")
     private String name;
 
 
@@ -21,11 +21,15 @@ public class Post {
 
     private Date created;
 
-    public static Post of(String name) {
-        Post post = new Post();
-        post.name = name;
-        return post;
+    public Post() {
     }
+
+    public Post(String name, String description) {
+        this.name = name;
+        this.description = description;
+        this.setCreated(new Date(System.currentTimeMillis()));
+    }
+
 
     public int getId() {
         return id;

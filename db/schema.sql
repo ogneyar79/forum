@@ -24,8 +24,8 @@ create table authorities
     id        serial primary key,
     authority VARCHAR(50) NOT NULL
 );
-ALTER TABLE users
-    (
+С
+(
     ADD COLUMN authority_id INT
     REFERENCES authorities (id)
     );
@@ -42,3 +42,7 @@ SET authority_id = 1;
 UPDATE users
 SET authority_id = 2
 WHERE id = 2;
+
+UPDATE authorities
+SET authority = 'ROLE_USER'
+WHERE id = 2

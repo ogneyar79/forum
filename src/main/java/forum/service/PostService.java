@@ -29,14 +29,12 @@ public class PostService {
 
     public Post findById(int id) {
         log.info(" PostService findById 30");
-        List<Post> rsl = new ArrayList<>();
         Post postNull = new Post();
         postNull.setId(0);
         postNull.setCreated(new Date());
         postNull.setDescription("Null object");
         postNull.setName(this.toString());
-        return posts.findById((long) id).orElse(postNull);
-
+        return posts.findById(id).orElse(postNull);
     }
 
     public void create(Post post) {

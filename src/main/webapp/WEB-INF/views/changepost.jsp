@@ -72,26 +72,23 @@
     </style>
 </head>
 <body>
-<h1> Редактирование Пользователя</h1>
-<form action="<c:url value='/update?id=${user.id}'/>" method='post' class="user">
+<h1> EDIT POST</h1>
+<form action="<c:url value='/updatepost?id=${post.id}'/>" method='post' class="post">
     <div class="form-row">
-        <label for="username">User name</label><input type="text" name="username" value="${user.username}"
-                                                          placeholder="Введите имя пользователя"
-                                                          id="username">
+        <label for="name">POST NAME</label><input type="text" name="name" value="${post.name}"
+                                                  placeholder="Введите тему поста"
+                                                  id="name">
     </div>
     <div class="form-row">
-        <label for="password">User password</label><input type="text" value="${user.password}" name="password"
-                                                                 placeholder="Введите новый пароль "
-                                                                 id="password">
+        <label for="description">DESCRIPTION</label>
+        <textarea rows="5" name="description" placeholder="Введите  описание поста"
+                  id="description" required>${post.description}</textarea>
     </div>
     <div class="form-row">
-        <label for="email">Email</label>
-        <textarea rows="5" name="location" placeholder="Введите фдрес электронной почты"
-                  id="email" required>${user.email}</textarea>
-    </div>
-    <div class="form-row">
-        <input name="submit" type="submit" value="Сохранить"/>
-    </div>
+        <label for="name">POST ID ${post.id}</label>
+        <div class="form-row">
+            <input name="submit" type="submit" value="Сохранить"/>
+        </div>
 </form>
 </body>
 </html>

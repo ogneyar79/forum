@@ -40,7 +40,7 @@ public class RegistrationEditUser {
         log.info("Controller RC 39 method post save /registration");
         user.setEnabled(true);
         user.setPassword(encoder.encode(user.getPassword()));
-        user.setAuthority(authorities.findByAuthority("USER"));
+        user.setAuthority(authorities.findByAuthority("ROLE_USER"));
         Authority authority = user.getAuthority();
         log.info(" User was got  user.id :" + user.getId() + " User name:" + user.getUsername());
         log.info(" User Authority :" + authority + "UserName" + user.getUsername());
@@ -50,9 +50,9 @@ public class RegistrationEditUser {
     }
 
     @PostMapping("/edit")
-    public String edit(@RequestParam("id") long id, Model model) {
+    public String edit(@RequestParam("id") int id, Model model) {
         log.info("Controller RC method post /edit");
-        model.addAttribute("user", service.getById((int) id));
+        model.addAttribute("user", service.getById(id));
         return "edituser";
     }
 
