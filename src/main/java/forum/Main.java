@@ -25,7 +25,6 @@ public class Main extends SpringBootServletInitializer {
         return liquibase;
     }
 
-
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
     }
