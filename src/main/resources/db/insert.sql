@@ -1,4 +1,4 @@
-insert into postss (name) values ('О чем этот форум?');
-insert into postss (name) values ('Правила форума.');
-insert into authoritiess (authority) values ('ROLE_USER');
-insert into authoritiess (authority) values ('ROLE_ADMIN');
+insert into posts (name) values ('О чем этот форум?');
+insert into posts (name) values ('Правила форума.');
+insert into authorities (authority) values ('ROLE_USER');
+insert into authorities (authority) values ('ROLE_ADMIN');
